@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import getRecipe from "./api/getRecipe";
 import { useSelector } from "react-redux";
 import TableContainer from "./components/TableContainer";
+import ContainerForTableContainer from "./components/ContainerForTableContainer";
 
 function App() {
   const recipes = useSelector((state) => state.recipes);
@@ -12,7 +13,8 @@ function App() {
     <div className="App">
       <CardContainer />
       <div className="table">
-        <TableContainer saved={saved} recipes={recipes} />
+        <ContainerForTableContainer saved={saved} recipes={recipes} />
+        {/* <TableContainer saved={saved} recipes={recipes} /> */}
       </div>
     </div>
   );

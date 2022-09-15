@@ -36,11 +36,7 @@ function TableContainer({ recipes, saved }) {
         animate={{ y: [0, -3, 0] }}
         transition={{ duration: 0.5 }}
       >
-        <motion.div
-          className="recipeCounter"
-          animate={{ opacity: [0, 1] }}
-          transition={{ delay: 0.5 }}
-        >
+        <motion.div className="recipeCounter">
           {recipes.length === 1
             ? `You have ${saved.length} recipe${saved.length ? "" : "s"} saved!`
             : recipes.length
