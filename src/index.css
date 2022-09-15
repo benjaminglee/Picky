@@ -252,7 +252,9 @@ img {
   left: 0px;
   z-index: -2;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 #containerBack {
   height: 200px;
@@ -263,9 +265,7 @@ img {
   border-bottom-right-radius: 5px;
   background-color: rgb(128, 87, 50);
   z-index: 1;
-  position: absolute;
   align-self: center;
-  justify-self: flex-end;
   margin-bottom: 33px;
   bottom: 2px;
 }
@@ -277,7 +277,7 @@ img {
   background-color: rgb(152, 102, 58);
   z-index: 1;
   position: absolute;
-  margin-top: 15px;
+  margin-top: 7px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -311,19 +311,19 @@ img {
   width: 380px;
   height: 160px;
   background-color: black;
-  position: absolute;
   z-index: 10;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   background-color: rgb(192, 116, 51);
-  margin-top: 55px;
-  left: 10px;
+  margin-top: 47px;
+  margin-left: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  position: absolute;
 }
 
 .recipeCounter {
@@ -333,12 +333,12 @@ img {
   color: blanchedalmond;
 }
 .shadow {
-  width: 390px;
+  width: 380px;
   height: 11px;
   border-radius: 10px;
   background-color: rgba(17, 17, 45, 0.5);
-  position: absolute;
-  top: 210px;
-  left: 6px;
+  left: 10px;
   opacity: 1;
+  top: 213px;
+  position: relative;
 }

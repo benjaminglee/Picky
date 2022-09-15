@@ -8,7 +8,7 @@ function ContainerForTableContainer({ saved, recipes }) {
       if (recipes.length) {
         setKeyVal(keyVal + 1);
       }
-    }, 700);
+    }, 500);
   }, [recipes]);
   return <TableContainer key={keyVal} saved={saved} recipes={recipes} />;
 }

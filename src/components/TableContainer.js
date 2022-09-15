@@ -5,11 +5,16 @@ function TableContainer({ recipes, saved }) {
     <>
       <motion.div
         id="containerBack"
-        animate={{ y: [0, -10, 0] }}
+        animate={{ y: [0, -25, 0], rotate: [0, 0.8, 0] }}
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          animate={{ y: [0, 12, 0], scaleX: [1, 0.9, 1], scaleY: [1, 1.2, 1] }}
+          animate={{
+            y: [0, 12, 0],
+            scaleX: [1, 0.9, 1],
+            scaleY: [1, 1.2, 1],
+            rotate: [0, -0.7, 0],
+          }}
           transition={{ duration: 0.5 }}
           className="shadow"
         ></motion.div>
@@ -39,7 +44,7 @@ function TableContainer({ recipes, saved }) {
         </motion.div>
         <motion.div
           id="containerFace"
-          animate={{ y: [0, -3, 0] }}
+          animate={{ y: [0, -3, 0], rotate: [0, 1, 0] }}
           transition={{ duration: 0.5 }}
         >
           <motion.div className="recipeCounter">

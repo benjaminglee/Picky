@@ -36,7 +36,7 @@ const RecipeCard = ({ keyVal, setKeyVal }) => {
     dispatch(setCard(recipe));
     setTimeout(() => {
       setKeyVal(keyVal + 1);
-    }, 700);
+    }, 500);
   };
 
   const handleDislike = (e) => {
@@ -44,7 +44,7 @@ const RecipeCard = ({ keyVal, setKeyVal }) => {
     dispatch(setCard(recipe));
     setTimeout(() => {
       setKeyVal(keyVal + 1);
-    }, 700);
+    }, 500);
   };
 
   return (
