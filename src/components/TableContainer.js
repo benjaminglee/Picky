@@ -9,6 +9,11 @@ function TableContainer({ recipes, saved }) {
         transition={{ duration: 0.5 }}
       >
         <motion.div
+          animate={{ y: [0, 12, 0], scaleX: [1, 0.9, 1], scaleY: [1, 1.2, 1] }}
+          transition={{ duration: 0.5 }}
+          className="shadow"
+        ></motion.div>
+        <motion.div
           id="containerFront"
           animate={{ y: [0, -1, 0] }}
           transition={{ duration: 0.6 }}
@@ -48,11 +53,6 @@ function TableContainer({ recipes, saved }) {
           </motion.div>
         </motion.div>
       </motion.div>
-      <motion.div
-        animate={{ y: [0, -5, 0], scaleX: [1, 0.9, 1], scaleY: [1, 1.2, 1] }}
-        transition={{ duration: 0.5 }}
-        className="shadow"
-      ></motion.div>
     </>
   );
 }

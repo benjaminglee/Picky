@@ -338,6 +338,7 @@ img {
   border-radius: 10px;
   background-color: rgba(17, 17, 45, 0.5);
   position: absolute;
-  top: 173px;
+  top: 210px;
+  left: 6px;
   opacity: 1;
 }
