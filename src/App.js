@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import RecipeCard from "./components/RecipeCard";
+import CardContainer from "./components/CardContainer";
+import { useEffect, useState } from "react";
+import getRecipe from "./api/getRecipe";
+import { useSelector } from "react-redux";
+import TableContainer from "./components/TableContainer";
 
 function App() {
+  const recipes = useSelector((state) => state.recipes);
+  const saved = useSelector((state) => state.savedRecipes);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CardContainer />
+      <div className="table">
+        <TableContainer saved={saved} recipes={recipes} />
+      </div>
     </div>
   );
 }

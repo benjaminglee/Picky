@@ -1,13 +1,334 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Readex Pro", sans-serif;
+}
+body {
+  background-color: rgb(250, 101, 116);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  width: 280px;
+  height: 280px;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgb(222, 222, 222);
+  pointer-events: none;
+}
+.App {
+  overflow-x: hidden;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.cardContainer {
+  width: 290px;
+  height: 410px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 90px;
+  margin-bottom: 100px;
+  padding: 1px;
+  position: relative;
+  perspective: 750px;
+}
+
+.cardContents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.cardContents:active {
+  transform: rotateY(180deg);
+}
+
+.cardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  margin-left: 17px;
+}
+
+.cardBack {
+  position: absolute;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.stain {
+  position: absolute;
+  border: none;
+  opacity: 0.2;
+  margin-left: 500px;
+  margin-bottom: 20px;
+  width: 280px;
+  height: 280px;
+  transform: rotate(10deg);
+  align-self: flex-end;
+  justify-self: flex-end;
+  z-index: -1;
+}
+.stain2 {
+  position: absolute;
+  border: none;
+  opacity: 1;
+  margin-left: 20px;
+  margin-top: 270px;
+  overflow: hidden;
+  object-fit: contain;
+  width: 90px;
+  height: 90px;
+  align-self: flex-end;
+  justify-self: flex-end;
+  z-index: -1;
+}
+.stain3 {
+  position: absolute;
+  border: none;
+  opacity: 0.5;
+  margin-right: 200px;
+  margin-top: 200px;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  align-self: flex-end;
+  justify-self: flex-end;
+  z-index: -1;
+}
+.moreThanTen {
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.recipeTitle {
+  align-self: flex-start;
+  margin-left: 12px;
+  margin-bottom: 1px;
+  margin-top: 5px;
+  font-size: 16px;
+  min-width: 200px;
+  max-height: 20px;
+}
+.longRecipeTitle {
+  font-size: 14px;
+  align-self: center;
+}
+.recipeImage {
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 275px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.ingredients {
+  list-style: none;
+  display: flex;
+  align-self: flex-start;
+  margin-left: 6px;
+}
+
+.ingredient {
+  text-decoration: none;
+  border: 1px solid rgb(232, 232, 232);
+  text-align: center;
+  margin: 5px;
+  margin-bottom: 6px;
+  padding: 5px;
+  border-radius: 7px;
+  font-size: 9pt;
+}
+.backIngredient {
+  text-decoration: none;
+  border: 1px solid rgb(232, 232, 232);
+  text-align: center;
+  margin: 5px;
+  margin-bottom: 6px;
+  padding: 5px;
+  border-radius: 7px;
+  font-size: 10pt;
+  width: 40%;
+}
+.manyBackIngredient {
+  font-size: 8.5pt;
+}
+.tagFill {
+  height: 37px;
+}
+
+.iconList {
+  display: flex;
+  justify-content: center;
+  margin-right: 14px;
+}
+.x {
+  transition: all 0.1s ease-in-out;
+  color: rgb(243, 71, 71);
+}
+.xContainer {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  text-align: center;
+
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+}
+.burgerContainer {
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 97px;
+}
+.burgerIcon {
+  color: coral;
+}
+.heartContainer {
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 46px;
+  height: 46px;
+  text-align: center;
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+  margin-left: 30px;
+}
+.heart {
+  color: rgb(65, 168, 65);
+  transition: all 0.1s ease-in-out;
+  margin-top: 1px;
+}
+.x:hover {
+  transform: scale(1.2);
+}
+.heart:hover {
+  transform: scale(1.2);
+}
+
+#xButton {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  position: relative;
+}
+#heartButton {
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  position: relative;
+}
+
+.table {
+  background-color: rgb(250, 161, 101);
+  position: absolute;
+  top: 600px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -2;
+  display: flex;
+  justify-content: center;
+}
+#containerBack {
+  height: 200px;
+  width: 400px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgb(128, 87, 50);
+  z-index: 1;
+  position: absolute;
+  align-self: center;
+  justify-self: flex-end;
+  margin-bottom: 33px;
+  bottom: 2px;
+}
+#containerFront {
+  height: 200px;
+  width: 400px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: rgb(152, 102, 58);
+  z-index: 1;
+  position: absolute;
+  margin-top: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.propCard {
+  width: 360px;
+  height: 190px;
+  border-radius: 7px;
+  background-color: antiquewhite;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+}
+
+#prop1 {
+  background-color: beige;
+  margin-left: 10px;
+  transform: rotate(3deg);
+}
+#prop2 {
+  background-color: rgb(232, 219, 203);
+  transform: rotate(-3deg);
+  left: 10px;
+}
+#prop3 {
+  background-color: rgb(253, 249, 241);
+  transform: rotate(0.5deg);
+}
+
+#containerFace {
+  width: 380px;
+  height: 160px;
+  background-color: black;
+  position: absolute;
+  z-index: 10;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: rgb(192, 116, 51);
+  margin-top: 55px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.recipeCounter {
+  font-weight: bolder;
+  text-align: center;
+  font-size: larger;
+  color: blanchedalmond;
 }
