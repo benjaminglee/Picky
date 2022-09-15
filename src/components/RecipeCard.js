@@ -51,7 +51,7 @@ const RecipeCard = ({ keyVal, setKeyVal }) => {
     <motion.div
       className="cardContainer"
       initial={{
-        y: 200,
+        y: 150,
         opacity: 0,
       }}
       animate={{
