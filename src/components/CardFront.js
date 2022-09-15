@@ -1,13 +1,9 @@
 import { IconContext } from "react-icons";
-import { useState } from "react";
 import { FaHeart, FaTimesCircle, FaHamburger } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useDispatch } from "react-redux";
 import { loaderVariants, childVariants } from "./animation";
 
 function CardFront({ recipe, handleLike, handleDislike }) {
-  const dispatch = useDispatch();
-
   return (
     <div className="cardFront">
       <motion.div
@@ -69,7 +65,7 @@ function CardFront({ recipe, handleLike, handleDislike }) {
       >
         <div
           className="xContainer"
-          onMouseDown={(e) => {
+          onMouseDown={() => {
             handleDislike();
           }}
         >
@@ -79,7 +75,7 @@ function CardFront({ recipe, handleLike, handleDislike }) {
         </div>
         <div
           className="heartContainer"
-          onMouseDown={(e) => {
+          onMouseDown={() => {
             handleLike();
           }}
         >
