@@ -1,7 +1,7 @@
 import TableContainer from "./TableContainer";
 import React, { useEffect, useState } from "react";
 
-function ContainerForTableContainer({ saved, recipes }) {
+function ContainerForTableContainer({ saved, recipes, clicked, setClicked }) {
   const [keyVal, setKeyVal] = useState(0);
   useEffect(() => {
     setTimeout(() => {
@@ -10,7 +10,15 @@ function ContainerForTableContainer({ saved, recipes }) {
       }
     }, 500);
   }, [recipes]);
-  return <TableContainer key={keyVal} saved={saved} recipes={recipes} />;
+  return (
+    <TableContainer
+      key={keyVal}
+      saved={saved}
+      recipes={recipes}
+      clicked={clicked}
+      setClicked={setClicked}
+    />
+  );
 }
 
 export default ContainerForTableContainer;

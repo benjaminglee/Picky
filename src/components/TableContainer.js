@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function TableContainer({ recipes, saved }) {
+function TableContainer({ recipes, saved, clicked, setClicked }) {
   return (
     <>
       <motion.div
@@ -51,6 +51,9 @@ function TableContainer({ recipes, saved }) {
           id="containerFace"
           animate={{ y: [0, -3, 0], rotate: [0, 1, 0] }}
           transition={{ duration: 0.5 }}
+          onClick={() => {
+            setClicked(true);
+          }}
         >
           <motion.div
             className="recipeCounter"
@@ -59,13 +62,15 @@ function TableContainer({ recipes, saved }) {
             }}
             transition={{ duration: 0.7 }}
           >
-            {recipes.length === 1
+            {clicked || recipes.length === 10
+              ? "Thanks for using Picky! Happy Eating!"
+              : recipes.length === 1
               ? `You have ${saved.length} recipe${
                   saved.length ? "" : "s"
                 } saved!`
-              : recipes.length
+              : recipes.length < 10 && recipes.length > 1
               ? `Out of ${recipes.length} recipes, you have ${saved.length} saved!`
-              : "Plan your weekly meals! Click through recipe cards as you please. When you're finished, click here for your results."}
+              : "Get inspired! Click through until you've saved 10 recipe cards, or double-click here early for your results!"}
           </motion.div>
         </motion.div>
       </motion.div>

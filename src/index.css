@@ -16,7 +16,7 @@ img {
   pointer-events: none;
 }
 .App {
-  overflow-x: hidden;
+  overflow: hidden;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -322,7 +322,7 @@ img {
   flex-wrap: wrap;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  position: absolute;
+  position: relative;
 }
 
 .recipeCounter {
@@ -330,6 +330,7 @@ img {
   text-align: center;
   font-size: larger;
   color: blanchedalmond;
+  padding: 3px;
 }
 .shadow {
   width: 380px;
@@ -340,4 +341,71 @@ img {
   opacity: 1;
   top: 213px;
   position: relative;
+}
+
+.endScreen {
+  width: 800px;
+  height: 600px;
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.endScreenTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 670px;
+  border-radius: 10px;
+  padding: 30px;
+}
+.pdfButton {
+  width: 160px;
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  background-color: rgb(86, 140, 255);
+  color: rgb(36, 36, 36);
+  transition: ease-out 0.2s;
+  box-shadow: inset 0 0 0 0 coral;
+  font-size: large;
+}
+.pdfButton:hover {
+  box-shadow: inset 160px 0 0 0 coral;
+  cursor: pointer;
+  color: white;
+}
+
+.endScreenText {
+  font-size: 28px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.endScreenTextFrag {
+  font-size: 28px;
+  margin: none;
+}
+.recipeCount {
+  color: rgb(250, 101, 116);
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.picky {
+  color: rgb(250, 101, 116);
+  font-weight: bold;
+  font-size: 42px;
+  text-align: center;
+  margin-top: 10px;
+}
+.endEarly {
+  height: 190px;
+  width: 400px;
+  margin: auto;
+  border-radius: 10px;
+  cursor: pointer;
 }

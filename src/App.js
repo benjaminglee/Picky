@@ -1,20 +1,46 @@
-import RecipeCard from "./components/RecipeCard";
 import CardContainer from "./components/CardContainer";
-import { useEffect, useState } from "react";
-import getRecipe from "./api/getRecipe";
+import React from "react";
 import { useSelector } from "react-redux";
-import TableContainer from "./components/TableContainer";
 import ContainerForTableContainer from "./components/ContainerForTableContainer";
+import PdfEndScreen from "./components/PdfEndScreen";
 
 function App() {
   const recipes = useSelector((state) => state.recipes);
   const saved = useSelector((state) => state.savedRecipes);
+  const [clicked, setClicked] = React.useState(false);
   return (
     <div className="App">
-      <CardContainer />
-      <div className="table">
-        <ContainerForTableContainer saved={saved} recipes={recipes} />
-      </div>
+      {!clicked && saved.length < 10 ? (
+        <>
+          <CardContainer />
+          <div
+            className="endEarly"
+            onDoubleClick={() => {
+              setClicked(true);
+            }}
+          ></div>
+          <div className="table">
+            <ContainerForTableContainer
+              saved={saved}
+              recipes={recipes}
+              clicked={clicked}
+              setClicked={setClicked}
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <PdfEndScreen saved={saved} recipes={recipes} />
+          <div className="table">
+            <ContainerForTableContainer
+              saved={saved}
+              recipes={recipes}
+              clicked={clicked}
+              setClicked={setClicked}
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }

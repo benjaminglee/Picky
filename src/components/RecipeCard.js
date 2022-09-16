@@ -19,17 +19,13 @@ const RecipeCard = ({ keyVal, setKeyVal }) => {
     const getData = async () => {
       const data = await getRecipe();
       let item = data.meals[0];
-      while (recipes.find((recipe) => recipe.idMeal === item.idMeal)) {
-        console.log("found existing item", item);
-        console.log("searching for a unique recipe...");
-        item = getData();
-      }
       setRecipe(item);
       setMeasurements(getIngredients(item));
     };
     getData();
   }, [liked, disliked]);
 
+  //increment key value, rerendering card container component and resetting animations
   const handleLike = (e) => {
     setLiked(!liked);
     dispatch(addCard(recipe));
