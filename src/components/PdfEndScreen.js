@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function PdfEndScreen({ saved, recipes }) {
+  //ending screen conditionally loaded in on 10 recipes saved or table container component double clicked.'
+  //includes button to generate and download pdf of selected recipes
   return (
     <motion.div
       className="endScreen"

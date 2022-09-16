@@ -7,6 +7,8 @@ import CardFront from "./CardFront";
 import CardBack from "./CardBack";
 
 const RecipeCard = ({ keyVal, setKeyVal }) => {
+  //main card component which contains front and back card faces. faces are
+  //absolutely positioned and stacked, switched between via css pseudo class animation
   const dispatch = useDispatch();
   const [recipe, setRecipe] = useState({});
   const [measurements, setMeasurements] = useState([]);
@@ -26,6 +28,7 @@ const RecipeCard = ({ keyVal, setKeyVal }) => {
   }, [liked, disliked]);
 
   //increment key value, rerendering card container component and resetting animations
+  //sets liked or disliked state to trigger appropriate animation
   const handleLike = (e) => {
     setLiked(!liked);
     dispatch(addCard(recipe));

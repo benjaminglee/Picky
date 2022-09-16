@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
-function TableContainer({ recipes, saved, clicked, setClicked }) {
+function TableContainer({ recipes, saved, clicked }) {
+  //renders card box with animations, and text displaying based on number of recipes
   return (
     <>
       <motion.div
@@ -51,9 +52,6 @@ function TableContainer({ recipes, saved, clicked, setClicked }) {
           id="containerFace"
           animate={{ y: [0, -3, 0], rotate: [0, 1, 0] }}
           transition={{ duration: 0.5 }}
-          onClick={() => {
-            setClicked(true);
-          }}
         >
           <motion.div
             className="recipeCounter"
@@ -62,6 +60,7 @@ function TableContainer({ recipes, saved, clicked, setClicked }) {
             }}
             transition={{ duration: 0.7 }}
           >
+            {/* displays correct text based on length of recipes from redux store */}
             {clicked || recipes.length === 10
               ? "Thanks for using Picky! Happy Eating!"
               : recipes.length === 1

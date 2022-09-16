@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { loaderVariants, childVariants } from "./animation";
 
 function CardFront({ recipe, handleLike, handleDislike }) {
+  //front face of card containing image and like/dislike buttons. holding card triggers active css class
+  //and flips to backside of card. icons trigger animations stored as objects in animations.js
   return (
     <div className="cardFront">
       <motion.div
