@@ -14,7 +14,6 @@ function App() {
       <CardContainer />
       <div className="table">
         <ContainerForTableContainer saved={saved} recipes={recipes} />
-        {/* <TableContainer saved={saved} recipes={recipes} /> */}
       </div>
     </div>
   );

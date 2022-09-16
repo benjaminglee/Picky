@@ -246,7 +246,7 @@ img {
 .table {
   background-color: rgb(250, 161, 101);
   position: absolute;
-  top: 600px;
+  top: 530px;
   right: 0px;
   bottom: 0px;
   left: 0px;
@@ -265,9 +265,8 @@ img {
   border-bottom-right-radius: 5px;
   background-color: rgb(128, 87, 50);
   z-index: 1;
+  margin-top: 10px;
   align-self: center;
-  margin-bottom: 33px;
-  bottom: 2px;
 }
 #containerFront {
   height: 200px;
