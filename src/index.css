@@ -6,7 +6,17 @@ body {
   background-color: rgb(250, 101, 116);
 }
 
-img {
+/* img {
+  width: 280px;
+  height: 280px;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgb(222, 222, 222);
+  pointer-events: none;
+} */
+
+.cardImg {
   width: 280px;
   height: 280px;
   border-radius: 10px 10px 0px 0px;
@@ -75,7 +85,7 @@ img {
   justify-content: center;
   overflow: hidden;
 }
-.stain {
+#stain {
   position: absolute;
   border: none;
   opacity: 0.2;
@@ -88,7 +98,7 @@ img {
   justify-self: flex-end;
   z-index: -1;
 }
-.stain2 {
+#stain2 {
   position: absolute;
   border: none;
   opacity: 1;
@@ -102,7 +112,7 @@ img {
   justify-self: flex-end;
   z-index: -1;
 }
-.stain3 {
+#stain3 {
   position: absolute;
   border: none;
   opacity: 0.5;
@@ -459,4 +469,28 @@ img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.splash {
+  position: absolute;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+.splashContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  top: -70px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.enterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

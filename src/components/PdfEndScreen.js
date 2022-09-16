@@ -20,12 +20,13 @@ function PdfEndScreen({ saved, recipes }) {
         pdf.rect(0, 0, 600, 900, "F");
         if (!saved.length) {
           pdf.setFontSize(50);
-          pdf.text("Hey Silly Goose!", 60, 100);
+          pdf.text("Hey Silly Goose!", 100, 100);
           pdf.setFontSize(40);
-          pdf.text("You need to add some", 60, 200);
-          pdf.text("recipes first, please come", 60, 250);
-          pdf.text("back after selecting", 60, 300);
-          pdf.text("a few cards! :)", 60, 350);
+          pdf.text("You need to add some", 100, 200);
+          pdf.text("recipes first, please come", 100, 250);
+          pdf.text("back after selecting", 100, 300);
+          pdf.text("a few cards! :)", 100, 350);
+          pdf.addImage(`../../pickySplash_0000_Layer-4.png`, 90, 400, 400, 400);
         }
         for (let i = 0; i < saved.length; i++) {
           const recipe = saved[i];

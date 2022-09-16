@@ -12,7 +12,26 @@ function App() {
   return (
     <div className="App">
       {!enteredSite ? (
-        <div>
+        <div className="enterContainer">
+          {/* <div className="splashContainer">
+            <img
+              className="splash"
+              src={"../pickySplash_0001_splash3.png"}
+              alt="diagram1"
+            />
+
+            <img
+              className="splash"
+              src={"../pickySplash_0002_splash2.png"}
+              alt="diagram1"
+            />
+
+            <img
+              className="splash"
+              src={"../pickySplash_0003_splash1.png"}
+              alt="diagram1"
+            />
+          </div> */}
           <button
             onClick={() => {
               setEnteredSite(true);

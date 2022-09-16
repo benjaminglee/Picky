@@ -20,13 +20,20 @@ function CardBack({ measurements }) {
           })
         : null}
       <img
-        className="stain"
+        className="cardImg"
+        id="stain"
         src="../../coffee-stain-png-33672.png"
         alt="stain"
       />
-      <img className="stain2" src="../../pngaaa.com-27358.png" alt="stain2" />
       <img
-        className="stain3"
+        className="cardImg"
+        id="stain2"
+        src="../../pngaaa.com-27358.png"
+        alt="stain2"
+      />
+      <img
+        className="cardImg"
+        id="stain3"
         src="../../pngfind.com-stain-png-185577.png"
         alt="stain3"
       />

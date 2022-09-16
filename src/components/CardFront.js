@@ -21,6 +21,7 @@ function CardFront({ recipe, handleLike, handleDislike }) {
       <div className="recipeImage">
         <motion.img
           variants={childVariants}
+          className="cardImg"
           initial="hidden"
           animate="visible"
           src={`${recipe.strMealThumb}`}
