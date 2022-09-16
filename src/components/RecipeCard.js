@@ -18,9 +18,13 @@ const RecipeCard = ({ keyVal, setKeyVal }) => {
   const saved = useSelector((state) => state.savedRecipes);
   console.log("render", { recipes }, { saved });
   useEffect(() => {
+    //make sure the loaded recipe has a recipe url
     const getData = async () => {
       const data = await getRecipe();
       let item = data.meals[0];
+      if (!item.strSource) {
+        getData();
+      }
       setRecipe(item);
       setMeasurements(getIngredients(item));
     };

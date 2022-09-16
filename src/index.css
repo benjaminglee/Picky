@@ -336,7 +336,7 @@ img {
   width: 380px;
   height: 11px;
   border-radius: 10px;
-  background-color: rgba(17, 17, 45, 0.5);
+  background-color: rgba(7, 7, 39, 0.8);
   left: 10px;
   opacity: 1;
   top: 213px;
@@ -378,6 +378,16 @@ img {
   cursor: pointer;
   color: white;
 }
+.selectedPdfButton {
+  width: 160px;
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  background-color: coral;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
 
 .endScreenText {
   font-size: 28px;
@@ -408,4 +418,45 @@ img {
   margin: auto;
   border-radius: 10px;
   cursor: pointer;
+}
+
+#pdf-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 587px;
+  height: 900px;
+  padding: 34px;
+  padding-top: 200px;
+  top: 0;
+  bottom: -150;
+  pointer-events: none;
+}
+.pdfItemContainer {
+  border: 1px solid black;
+}
+
+.recipeTab {
+  text-align: left;
+  margin: 30px;
+}
+
+.credits {
+  position: absolute;
+  top: 0;
+  y: 0;
+  margin-top: 10px;
+  margin-left: 5px;
+  color: rgb(195, 78, 90);
+}
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

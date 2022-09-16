@@ -8,9 +8,20 @@ function App() {
   const recipes = useSelector((state) => state.recipes);
   const saved = useSelector((state) => state.savedRecipes);
   const [clicked, setClicked] = React.useState(false);
+  const [enteredSite, setEnteredSite] = React.useState(false);
   return (
     <div className="App">
-      {!clicked && saved.length < 10 ? (
+      {!enteredSite ? (
+        <div>
+          <button
+            onClick={() => {
+              setEnteredSite(true);
+            }}
+          >
+            Get Picky!
+          </button>
+        </div>
+      ) : !clicked && saved.length < 10 ? (
         <>
           <CardContainer />
           <div
@@ -27,6 +38,7 @@ function App() {
               setClicked={setClicked}
             />
           </div>
+          <div className="credits">Created by Ben Lee | 2022</div>
         </>
       ) : (
         <>
@@ -39,6 +51,7 @@ function App() {
               setClicked={setClicked}
             />
           </div>
+          <div className="credits">Created by Ben Lee | 2022</div>
         </>
       )}
     </div>

@@ -54,20 +54,20 @@ function TableContainer({ recipes, saved, clicked }) {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="recipeCounter"
+            className="recipeCounter unselectable"
             animate={{
               opacity: [0, 0, 1],
             }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: recipes.length < 10 ? 0.7 : 0.01 }}
           >
             {/* displays correct text based on length of recipes from redux store */}
-            {clicked || recipes.length === 10
+            {clicked || saved.length === 10
               ? "Thanks for using Picky! Happy Eating!"
               : recipes.length === 1
               ? `You have ${saved.length} recipe${
                   saved.length ? "" : "s"
                 } saved!`
-              : recipes.length < 10 && recipes.length > 1
+              : saved.length < 10 && recipes.length > 1
               ? `Out of ${recipes.length} recipes, you have ${saved.length} saved!`
               : "Get inspired! Click through until you've saved 10 recipe cards, or double-click here early for your results!"}
           </motion.div>
