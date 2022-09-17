@@ -18,6 +18,9 @@ function PdfEndScreen({ saved, recipes }) {
         pdf.setTextColor(255, 255, 255);
         pdf.setFillColor(255, 127, 80);
         pdf.rect(0, 0, 600, 900, "F");
+        pdf.setFillColor(255, 255, 255);
+        pdf.rect(400, 0, 300, 900, "F");
+
         if (!saved.length) {
           pdf.setFontSize(50);
           pdf.text("Hey Silly Goose!", 100, 100);
@@ -25,23 +28,27 @@ function PdfEndScreen({ saved, recipes }) {
           pdf.text("You need to add some", 100, 200);
           pdf.text("recipes first, please come", 100, 250);
           pdf.text("back after selecting", 100, 300);
-          pdf.text("a few cards! :)", 100, 350);
+          pdf.text("a few cards!", 100, 350);
           pdf.addImage(`../../pickySplash_0000_Layer-4.png`, 90, 400, 400, 400);
         }
         for (let i = 0; i < saved.length; i++) {
           const recipe = saved[i];
           const y = 70 * (i + 1);
+          pdf.setFont("Helvetica", "bold");
+          pdf.setTextColor(255, 255, 255);
           pdf.setFontSize(16);
           pdf.text(
             `${i + 1}) ${recipe.strMeal}`,
-            25,
+            30,
             y - 23 + i * 6 * (1 + i / 12)
           );
           pdf.setFontSize(13);
-          pdf.addImage(`${recipe.strMealThumb}`, 450, y - 60 + 11 * i, 90, 65);
+          pdf.setFont("Helvetica", "bolditalic");
+          pdf.addImage(`${recipe.strMealThumb}`, 460, y - 60 + 11 * i, 90, 65);
+          pdf.setTextColor(154, 53, 16);
           pdf.textWithLink(
             "Get the Recipe!",
-            45,
+            50,
             y - 3 + i * 6 * (1 + i / 11),
             {
               url: `${recipe.strSource}`,
@@ -73,26 +80,35 @@ function PdfEndScreen({ saved, recipes }) {
       >
         <div className="endScreenTextContainer">
           <div className="endScreenText  thankyou">
-            Thanks for using <div className="picky">Picky!</div>
+            <img
+              id="tinyImage"
+              src="../pickySplash_0000_Layer-4.png"
+              alt="comatose goose"
+            />
+            <div className="thankyouBox">
+              Thanks for being <span className="picky">Picky!</span>
+            </div>
           </div>
-          <div className="endScreenText">
-            We hope you have a fun selection of meals lined up for the coming
-            week.
-          </div>
-          <div className="endScreenText">
-            After going through{" "}
-            <span className="recipeCount endScreenTextFrag">
-              {recipes.length}{" "}
-            </span>
-            <span className="endScreenTextFrag"> cards, you saved </span>{" "}
-            <span className="recipeCount endScreenTextFrag">
-              {saved.length}
-            </span>{" "}
-            <span className="endScreenTextFrag">recipes!</span>
-          </div>
-          <div className="endScreenText">
-            Use the button below to generate a PDF with links to the actual
-            recipes from your saved cards.
+          <div>
+            <div className="endScreenText">
+              We hope you have a fun selection of meals lined up for the coming
+              week.
+            </div>
+            <div className="endScreenText">
+              After going through{" "}
+              <span className="recipeCount endScreenTextFrag">
+                {recipes.length}{" "}
+              </span>
+              <span className="endScreenTextFrag"> cards, you saved </span>{" "}
+              <span className="recipeCount endScreenTextFrag">
+                {saved.length}
+              </span>{" "}
+              <span className="endScreenTextFrag">recipes!</span>
+            </div>
+            <div className="endScreenText">
+              Use the button below to generate a PDF with links to the actual
+              recipes from your saved cards.
+            </div>
           </div>
           <div className="endScreenText" id="happyEating">
             Happy Eating!
