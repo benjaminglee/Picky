@@ -18,8 +18,6 @@ function PdfEndScreen({ saved, recipes }) {
         pdf.setTextColor(255, 255, 255);
         pdf.setFillColor(255, 127, 80);
         pdf.rect(0, 0, 600, 900, "F");
-        pdf.setFillColor(255, 255, 255);
-        pdf.rect(400, 0, 300, 900, "F");
 
         if (!saved.length) {
           pdf.setFontSize(50);
@@ -30,6 +28,9 @@ function PdfEndScreen({ saved, recipes }) {
           pdf.text("back after selecting", 100, 300);
           pdf.text("a few cards!", 100, 350);
           pdf.addImage(`../../pickySplash_0000_Layer-4.png`, 90, 400, 400, 400);
+        } else {
+          pdf.setFillColor(255, 255, 255);
+          pdf.rect(400, 0, 300, 900, "F");
         }
         for (let i = 0; i < saved.length; i++) {
           const recipe = saved[i];

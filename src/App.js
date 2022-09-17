@@ -35,7 +35,10 @@ function App() {
           <div className="credits">Created by Ben Lee | 2022</div>
           <div className="credits2">Hungry for more?</div>
           <div className="credits3">
-            Check out <a href="https://github.com/benjaminglee">my github!</a>
+            Check out{" "}
+            <a href="https://github.com/benjaminglee/" target="_blank">
+              my github!
+            </a>
           </div>
         </>
       ) : (
@@ -52,7 +55,10 @@ function App() {
           <div className="credits">Created by Ben Lee | 2022</div>
           <div className="credits2">Hungry for more?</div>
           <div className="credits3">
-            Check out <a href="https://github.com/benjaminglee">my github!</a>
+            Check out{" "}
+            <a href="https://github.com/benjaminglee" target="_blank">
+              my github!
+            </a>
           </div>
         </>
       )}
